@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -130,7 +130,7 @@ desired effect
          
         </div>
       </div>
-	
+  
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
@@ -165,153 +165,150 @@ desired effect
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-		<form method="post" class="register">
-                                            <p> Nome do Jogo <br>
-                                                <input type="text" name="nomejogo" id="nomejogo" minlength="2" maxlength="100" required />
-                                            </p>
-                                            <p>Desenvolvedor <br> 
-                                                <input type="text" name="desenvolvedor" id="desenvolvedor" maxlength="100" required />
-                                            </p>
-                                            <p>Data de Lançamento <br>
-                                                <input type="text" name="datajogo" id="datajogo" maxlength="4" required />
-                                            </p>
-											<div class="form-group">
-											<p>Descrição do jogo 
-											<textarea class="form-control" rows="5" id="descricao"  required ></textarea>
-											</p>
-											<p>Imagem Capa 
-											<form action="#">
-											<input type="file" name="pic" accept="image/*"  required >
-											</p>
-									</div>
+    <form action="controller/controllerCadastroGames.php" method="post" class="register">
+        <p> Nome do Jogo <br>
+          <input type="text" name="nomejogo" id="nomejogo" minlength="2" maxlength="100" required />
+        </p>
+        <p>Desenvolvedor <br> 
+            <input type="text" name="desenvolvedor" id="desenvolvedor" maxlength="100" required />
+        </p>
+        <p>Data de Lançamento <br>
+            <input type="text" name="datajogo" id="datajogo" maxlength="4" required />
+        </p>
+                      <div class="form-group">
+                      <p>Descrição do jogo 
+                      <textarea class="form-control" rows="5" id="descricao"  required ></textarea>
+                      </p>
+                      <p>Imagem Capa 
+                      <input type="file" name="pic" accept="image/*"  required >
+                      </p>
+                  </div>
                                     </div>
-									</div>
-									</div>
-									 <div class="col-md-6">
+                  </div>
+                  </div>
+                   <div class="col-md-6">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Catergoria</h3>
-			  <div class="box-body">
-								
-												<input type="checkbox" id="cbAventura" value="Aventura"/>
-												<label >Aventura</label>
+        <div class="box-body">
+                
+                        <input name="categoria[]" type="checkbox" id="cbAventura" value="1"/>
+                        <label >Aventura</label>
 
-												<input type="checkbox" id="cbrpg" value="cbrpg"/>
-												<label >RPG</label>
+                        <input name="categoria[]" type="checkbox" id="cbrpg" value="8"/>
+                        <label >RPG</label>
 
-												<input type="checkbox" id="cbshooter" value="cbshooter"/>
-												<label >Shooter</label><br><br>
+                        <input  name="categoria[]" type="checkbox" id="cbrpg" value="2"/>
+                        <label >Ação</label><br><br>
 
-												<input type="checkbox" id="cbshooter" value="cbshooter"/>
-												<label >Luta</label>
+                        <input name="categoria[]" type="checkbox" id="cbshooter" value="15"/>
+                        <label >Luta</label>
 
-												<input type="checkbox" id="cbplataforma" value="cbplataforma"/>
-												<label >Plataforma</label>
+                        <input name="categoria[]" type="checkbox" id="cbcorrida" value="4"/>
+                        <label >Corrida</label>
 
-												<input type="checkbox" id="cbpluzze" value="cbpluzze"/>
-												<label >Puzzles</label><br><br>
+                        <input name="categoria[]" type="checkbox" id="cbrpg" value="3"/>
+                        <label >Casual</label><br><br>
 
-												<input type="checkbox" id="cbcorrida" value="cbcorrida"/>
-												<label >Corrida</label>
+                        <input name="categoria[]" type="checkbox" id="cbIndie" value="7"/>
+                        <label >Indie</label>
 
-												<input type="checkbox" id="cbcasual" value="cbcasual"/>
-												<label >Casual</label>
+                        <input name="categoria[]" type="checkbox" id="cbSobrevivencia" value="14"/>
+                        <label >Tiro</label>
 
-												<input type="checkbox" id="cbIndie" value="cbIndie"/>
-												<label >Indie</label><br><br>
+                        <input name="categoria[]" type="checkbox" id="cbMultiplayer" value="11"/>
+                        <label >Multiplayer</label><br><br>
 
-												<input type="checkbox" id="cbSobrevivencia" value="cbSobrevivencia"/>
-												<label >Sobrevivência</label>
+                        <input name="categoria[]" type="checkbox" id="cbMundoaberto" value="12"/>
+                        <label >Mundo Aberto</label>  
 
-												<input type="checkbox" id="cbMultiplayer" value="cbMultiplayer"/>
-												<label >Multiplayer</label>
+                        <input name="categoria[]" type="checkbox" id="cbMmo" value="13"/>
+                        <label >MMO</label>
 
-												<input type="checkbox" id="cbMundoaberto" value="cbMundoaberto"/>
-												<label >Mundo Aberto</label><br><br>
+                        <input name="categoria[]" type="checkbox" id="cbSimulador" value="9"/>
+                        <label >Simulador</label><br><br>
 
-												<input type="checkbox" id="cbMmo" value="cbMmo"/>
-												<label >MMO</label>
+                        <input name="categoria[]" type="checkbox" id="cbTerror" value="16"/>
+                        <label >Terror</label>
 
-												<input type="checkbox" id="cbSimulador" value="cbSimulador"/>
-												<label >Simulador</label>
+                        <input name="categoria[]" type="checkbox" id="cbEstrategia" value="6"/>
+                        <label >Estratégia</label>
 
-												<input type="checkbox" id="cbTerror" value="cbTerror"/>
-												<label >Terror</label><br><br>
+                        <input name="categoria[]", type="checkbox" id="cbMusica" value="17"/>
+                        <label >Música</label><br><br>
 
-												<input type="checkbox" id="cbEstrategia" value="Aventura"/>
-												<label >Estratégia</label>
+                        <input name="categoria[]" type="checkbox" id="cbEsportes" value="18"/>
+                        <label >Esportes</label>
+                        </p>
+                                            
+                        <!--Plataforma Game-->
 
-												<input type="checkbox" id="cbMusica" value="cbMusica"/>
-												<label >Música</label>
 
-												<input type="checkbox" id="cbEsportes" value="cbEsportes"/>
-												<label >Esportes</label><br>
-                                            </p>
-                                            <p>
-                                            	<span>Plataformas * </span><br/>
-												<br/>
-												<input type="checkbox"  value="pcMicrosoft"/>
-												<label >PC - Microsoft Windows</label>
-												<div>
-													<input type="checkbox"  value="playstation"/>
-													<label >PlayStation </label>
-													
-													<input type="checkbox"  value="playstation2"/>
-													<label >PlayStation 2 </label>
-													
-													<input type="checkbox"  value="playstation3"/>
-													<label >PlayStation 3 </label>
-													
-													<input type="checkbox"  value="playstation4"/>
-													<label >PlayStation 4 </label>
-												</div><br/>
-												<div>
-													<input type="checkbox"  value="xbox"/>
-													<label >Xbox</label>
-													
-													<input type="checkbox"  value="xbox360"/>
-													<label >Xbox 360 </label>
-													
-													<input type="checkbox"  value="xboxOne"/>
-													<label >Xbox One </label>
-												</div><br/>
-												<div>
-													<input type="checkbox"  value="nintendoWii"/>
-													<label >Nintendo Wii</label>
+                        <p>
+                          <span>Plataformas * </span><br/>
+                        <br/>
+                          <input name="plataforma[]" type="checkbox"  value="1"/>
+                          <label >PC</label>
+                          <div>
+                          <input name="plataforma[]" type="checkbox"  value="2"/>
+                          <label >PlayStation </label>
+                          
+                          <input  name="plataforma[]" type="checkbox"  value="3"/>
+                          <label >PlayStation 2 </label>
+                          
+                          <input  name="plataforma[]" type="checkbox"  value="4"/>
+                          <label >PlayStation 3 </label>
+                          
+                          <input  name="plataforma[]" type="checkbox"  value="5"/>
+                          <label >PlayStation 4 </label>
+                        </div><br/>
+                        <div>
+                          <input name="plataforma[]" type="checkbox"  value="6"/>
+                          <label >Xbox</label>
+                          
+                          <input name="plataforma[]" name="plataforma[]" type="checkbox"  value="7"/>
+                          <label >Xbox 360 </label>
+                          
+                          <input  name="plataforma[]" type="checkbox"  value="8"/>
+                          <label >Xbox One </label>
+                        </div><br/>
+                        <div>
+                          <input name="plataforma[]" type="checkbox"   value="9"/>
+                          <label >Nintendo Wii</label>
 
-													<input type="checkbox"  value="nintendoU"/>
-													<label >Nintendo Wii U</label>
+                          <input name="plataforma[]" type="checkbox"   value="10"/>
+                          <label >Nintendo Wii U</label>
 
-													<input type="checkbox"  value="nintendoDS"/>
-													<label >Nintendo DS</label>
+                          <input name="plataforma[]" type="checkbox"   value="11"/>
+                          <label >Nintendo DS</label>
 
-													<input type="checkbox"  value="nintendo64"/>
-													<label >Nintendo 64</label>
+                          <input name="plataforma[]" type="checkbox"   value="12"/>
+                          <label >Nintendo 64</label>
 
-													<input type="checkbox"  value="nintendoSwitch"/>
-													<label >Nintendo Switch</label>
+                          <input name="plataforma[]" type="checkbox"   value="13"/>
+                          <label >Nintendo Switch</label>
 
-													<input type="checkbox"  value="snes"/>
-													<label >SNES</label><br>
+                          <input name="plataforma[]" type="checkbox"   value="14"/>
+                          <label >SNES</label><br>
 
-													<input type="checkbox"  value="gba"/>
-													<label >GBA</label>
-												
-													<input type="checkbox"  value="gameCube"/>
-													<label >Game Cube</label>
+                          <input name="plataforma[]" type="checkbox"   value="15"/>
+                          <label >GBA</label>
+                        
+                          <input name="plataforma[]"  type="checkbox"  value="gameCube"/>
+                          <label >Game Cube</label>
 
-												</div>
+                        </div>
                                             </p>
                                         <p class="auth-submit">
                                             <input type="submit" value="Cadastrar">
-                                        </p>
+                                        </p>  
 
                                         </form>
-									
+                  
       
-		</div>
-		</div>
-		</div>
+    </div>
+    </div>
+    </div>
     </section>
     <!-- /.content -->
   </div>

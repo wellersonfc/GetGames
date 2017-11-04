@@ -17,7 +17,7 @@ $cadastro_usuario = "INSERT INTO `cliente`(`nomeCliente`, `emailCliente`, `senha
   $atu ="UPDATE cliente
     SET nomeCliente = '$nome', emailCliente = '$email', senhaCliente = $senha, telefone = '$telefone', whatsapp = '$whatsapp', img = '', cep ='$cep', uf = '$estado', cidade = '$cidade', bairro= '$bairro', 
       endereco = '$endereco', numero = '$numero', cpf ='$cpf'
-    WHERE idCliente = '$id' ;"
+    WHERE idCliente = '$id'";
 
 	
 ?>
