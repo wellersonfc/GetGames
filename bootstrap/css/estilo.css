@@ -455,3 +455,15 @@ cursor:pointer;
  	padding-bottom: 20px;
  	font-family: 'panton';
  }
+/*========== infojogo  =================*/
+.container-info{
+	padding-top: 70px;
+	padding-bottom: 40px;
+
+}	
+.form-info{
+	background-color: rgba(255, 255, 255, 0.7); 
+	padding: 25px;
+	padding-left: 25px;
+
+}
