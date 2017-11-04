@@ -177,7 +177,7 @@ desired effect
         </p>
                       <div class="form-group">
                       <p>Descrição do jogo 
-                        <textarea class="form-control" rows="5" id="descricao"  required ></textarea>
+                        <input type="text"  class="form-control" rows="5" id="descricao"  name="descricao" required />
                       </p>
                       <p>Imagem Capa 
                         <input name="arquivo" type="file" required />

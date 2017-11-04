@@ -1,10 +1,13 @@
 <?php 
 //posta cadastro de usuario;
+
 $njogos = $_POST['nomejogo'];
 $desen= $_POST['desenvolvedor'];
 $datajogo= $_POST['datajogo'];
 $cate= $_POST['categoria'];
 $plata= $_POST['plataforma'];
+$img = $_POST['arquivo'];
+$des = $_POST['descricao'];
 
 //Importação da do conector
 require '../model/conector.php';
@@ -48,18 +51,18 @@ if(isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0)
 		// tenta mover o arquivo para o destino
 		if( @move_uploaded_file( $arquivo_tmp, $destino  ))
 		{
-			echo "Arquivo salvo com sucesso em : <strong>" . $destino . "</strong><br />";
+			echo "Arquivo salvo com sucesso em : <strowng>" . $destino . "</strong><br />";
 			echo "<img src=\"" . $destino . "\" />";
 		}
 	}
-}	
+}
 
 foreach($cate as $i){
    	foreach($plata as $v){
 	   $query = "INSERT INTO `jogos`(`nome`, `anolancamento`, `descricao`, `imgJogo`, 
 	   		`JogosCategoria_idJogosCategoria`, `JogosClientes_idJogosClientes`, `desenvolvedor_jogo`,`class`) 
 	   		VALUES 
-	   		('$njogos','$datajogo','dddd','dddddd','$i','$v','$desen','$ultimoid')";
+	   		('$njogos','$datajogo','$des','$img','$i','$v','$desen','$ultimoid')";
 	   		 
 	   		$resultado = mysqli_query($conexao, $query);
  			//var_dump($resultado);
