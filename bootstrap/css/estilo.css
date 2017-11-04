@@ -1,6 +1,23 @@
+@font-face {
+    font-family: 'panton';
+    src: url('../../bootstrap/fonts/panton-blackitaliccaps-webfont.woff')/*Para navegadores Internet Explorer*/;
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+@font-face {
+    font-family: 'panton';
+    src: url('../../bootstrap/fonts/panton-blackitaliccaps-webfont.ttf') /*Para os demais navegadores*/;
+    font-weight: normal;
+    font-style: normal;
+} 
+.panton{
+	font-family: 'panton';
+}
 body{
 	height: 100%;
 	background:#e9e9e9 ;
+
 }
 /* -- Barra de navegação -- */
 .img-logo {
@@ -394,8 +411,47 @@ cursor:pointer;
 	
 	
 }
-button.img{
- border: 0px none
- width: 70px;
- height:auto;
+
+
+
+
+/*========== editarCliente  =================*/
+.body-recad{
+    background-image: url('../../imagens/bgrecad/recad-bg1922.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+  /*background geralmente uso o modo compacto, mas aqui vou colocar separadamente para explicar cada parte*/
+  /* aqui defino a imagem maior*/
+
+  /*deixa o background com efeito paralax*/
+  background-attachment: fixed;
+  /* cover é para nunca deixar espaço sem imagem*/
+  background-size: cover;
+
 }
+@media only screen and (max-width: 767px) {
+  .body-recad {
+    background-image: url('../../imagens/bgrecad/recad-bg800.png');
+  }
+}
+.form-recad{ 
+	width: 300px;
+	height: 35px;
+	margin-top: 5px;
+}
+.container-recad{
+	padding-top: 20px;
+	padding-bottom: 40px;
+
+}	
+.grad {
+  
+  background-color: rgba(000, 000, 000, 0.2); 
+  padding: 30px;
+  
+}
+ .texth2{
+ 	color: white;
+ 	padding-bottom: 20px;
+ 	font-family: 'panton';
+ }

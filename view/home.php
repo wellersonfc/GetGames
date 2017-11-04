@@ -13,6 +13,8 @@
     <link href="../bootstrap/css/estilo.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -41,17 +43,18 @@
        <li><a href="#">dados do sitema</a></li>
       
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="editarcliente.php">Usuario
+        <a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
         <span class="caret"></span></a>
         <ul class="dropdown-menu ">
           <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-11">
           <li class="dropdown-header"> <a href="verPerfil">
-          <img src="http://placehold.it/120x120" alt="Alternate Text" class="img-responsive"/>
+          <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
                 </a>
             <p id="nome">Nomeusuario</p>
             <p id="email">mail@gmail.com</p>
-             <a href="" class="buy-btn " id="sair">Sair</a></li>
+            <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
+             <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
          </div>
          </div>
          </ul>
