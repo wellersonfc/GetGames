@@ -177,10 +177,10 @@ desired effect
         </p>
                       <div class="form-group">
                       <p>Descrição do jogo 
-                      <textarea class="form-control" rows="5" id="descricao"  required ></textarea>
+                        <textarea class="form-control" rows="5" id="descricao"  required ></textarea>
                       </p>
                       <p>Imagem Capa 
-                      <input type="file" name="pic" accept="image/*"  required >
+                        <input name="arquivo" type="file" required />
                       </p>
                   </div>
                                     </div>
