@@ -13,8 +13,6 @@
     <link href="../bootstrap/css/estilo.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -43,7 +41,7 @@
        <li><a href="#">dados do sitema</a></li>
       
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown"  >Usuario
+        <a class="dropdown-toggle" data-toggle="dropdown" href="editarcliente.php">Usuario
         <span class="caret"></span></a>
         <ul class="dropdown-menu ">
           <div class="row">
