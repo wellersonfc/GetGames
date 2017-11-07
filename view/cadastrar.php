@@ -12,6 +12,12 @@
     <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
     <link href="js_jquery/index.js">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="../bootstrap/js/javascript.js"></script>
+
 
 </head>
 
@@ -113,14 +119,7 @@
 
 
 
-            <!-- jQuery 3 -->
-            <script src="bower_components/jquery/dist/jquery.min.js"></script>
-            <!-- Bootstrap 3.3.7 -->
-            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-            <!-- Arquivo JQuery-->
-            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
-            <script src="js/index.js"></script>
+          
 
 
 
