@@ -490,5 +490,5 @@ cursor:pointer;
 @media only screen and (max-width: 767px) {
   .body-cat {
     background-color: black;
-    background-image: url('../../imagens/bg-cat.jpg');
+    background-image: url('../../imagens/bg-cat.png');
   }
