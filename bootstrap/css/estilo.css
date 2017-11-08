@@ -467,3 +467,28 @@ cursor:pointer;
 	padding-left: 25px;
 
 }
+
+.text-cat{
+	font-size: : 5px;
+	padding-top: 5px;
+}
+
+    .body-cat{
+     background-color: black;
+    background-image: url('../../imagens/bg-cat.jpg');
+      
+    background-repeat: no-repeat;
+    height: 100vh;
+  /*background geralmente uso o modo compacto, mas aqui vou colocar separadamente para explicar cada parte*/
+  /* aqui defino a imagem maior*/
+
+  /*deixa o background com efeito paralax*/
+  background-attachment: fixed;
+  /* cover é para nunca deixar espaço sem imagem*/
+  background-size: cover;
+}
+@media only screen and (max-width: 767px) {
+  .body-cat {
+    background-color: black;
+    background-image: url('../../imagens/bg-cat.jpg');
+  }

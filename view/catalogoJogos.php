@@ -21,7 +21,7 @@
 
 </head>
 
-<body class="">
+<body class="body-cat">
 	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   		<div class="container">
 			<div class="navbar-header">
@@ -60,16 +60,50 @@
 	 </div>
 <!-- /container -->
     </nav>
-    <div class="container-fluid container-recad" >
+    <div class="">
+    <div class="container" >
     	<div class="row">
-    		<div class="col-md-4"><img src="../imagens/fifa18p4.jpg" style="width: 613px; height: 100%;"></div>
-    		<div class="col-md-7"></div>
+    		<div class="col-md-4"><h1 class="panton" style="color: white ; padding-top: 90px;padding-bottom: 50px">Catalogo jogos</h1></div>
+      </div>
+    </div>
+     <div class="container" >
+      <div class="row">
+        <?php
+          for($i=0;$i<18;$i++)
+        {
+?>
+        <div class="col-sm-6 col-md-2" style="padding-top: 40px">
+          <div class="thumbnail">
+          <div class="text-center">
+          <img src="../imagens/fifa18p4.jpg" style="width: 150px; height: 100%;">
+          <div class=" text-center">
+            <p class="text-cat panton">nome do jogo</p>
+          </div>
+        </div>
+        </div></div>
+        <?php } ?>
 
-    			
-  				
-
+          
 </div>
 </div>
+
+<div style="padding-top: 55px">
+<section id="cinza" class="section-cinza" >
+    <footer>
+
+      <div class="container-footer">
+        <a href="index.html">
+          <span class="img-logo footer-img"></span>
+        </a>
+
+        <div class="container-footer text-center">
+          <p class="credits text-center">
+            Trabalho PI - UNA CONTAGEM
+          </p>
+        </div>
+      </div>
+    z
+  </section>
     		
     		
    </body>
