@@ -13,6 +13,7 @@
     <link href="../bootstrap/css/estilo.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -21,11 +22,7 @@
 
 </head>
 
-<<<<<<< HEAD
-<body class="">
-=======
-<body class="body-cat">
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
+<body class="body-recad">
 	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   		<div class="container">
 			<div class="navbar-header">
@@ -64,64 +61,67 @@
 	 </div>
 <!-- /container -->
     </nav>
-<<<<<<< HEAD
-    <div class="container-fluid container-recad" >
+    <div class="container-fluid container-info" >
     	<div class="row">
-    		<div class="col-md-4"><img src="../imagens/fifa18p4.jpg" style="width: 613px; height: 100%;"></div>
-    		<div class="col-md-7"></div>
+        <div class="col-md-2"></div>
+    		<div class="col-md-8">
+            <div class="col-md-12" style="background-color: white; padding: 25px">
+            <div class="box-body">
+              <table id="example2" class="table  table-striped">
+                <thead>
+                <tr>
+                  <th>jogo</th>
+                  <th></th>
+                  
+                </tr>
+                </thead>
+                <tbody>
+                      <?php
+          for($i=0;$i<18;$i++)
+        {
+?>
+                
+                <tr>
+                  <td><a href="infojogo.php"><img src="../imagens/fifa18p4.jpg"  style="width: 100px ;"></td></a>
+                  <td><h4 class="panton">Fifa 18<small>Playstation</h4>
+                    <p>O jogo possui diversas melhorias, se comparado a sua versão anterior. Suas animações de movimentação e finalização possibilitam uma batida e cabeceio mais fluidos na bola, combinando-se para aumentar o potencial de finalizações dramáticas e incríveis. O game também trouxe mudanças em sua jogabilidade, possibilitando o jogador a mandar a bola direto para a área durante o cruzamento.</p>
 
-    			
+</td>
+                </tr>
+              <?php } ?>
+
+      
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
   				
 
 </div>
 </div>
-=======
-    <div class="">
-    <div class="container" >
-    	<div class="row">
-    		<div class="col-md-4"><h1 class="panton" style="color: white ; padding-top: 90px;padding-bottom: 50px">Catalogo jogos</h1></div>
-      </div>
-    </div>
-     <div class="container" >
-      <div class="row">
-        <?php
-          for($i=0;$i<18;$i++)
-        {
-?>
-        <div class="col-sm-6 col-md-2" style="padding-top: 40px">
-          <div class="thumbnail">
-          <div class="text-center">
-          <img src="../imagens/fifa18p4.jpg" style="width: 150px; height: 100%;">
-          <div class=" text-center">
-            <p class="text-cat panton">nome do jogo</p>
-          </div>
-        </div>
-        </div></div>
-        <?php } ?>
 
-          
-</div>
-</div>
-
-<div style="padding-top: 55px">
-<section id="cinza" class="section-cinza" >
-    <footer>
-
-      <div class="container-footer">
-        <a href="index.html">
-          <span class="img-logo footer-img"></span>
-        </a>
-
-        <div class="container-footer text-center">
-          <p class="credits text-center">
-            Trabalho PI - UNA CONTAGEM
-          </p>
-        </div>
-      </div>
-    z
-  </section>
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
-    		
+<!-- jQuery 3 -->
+<script src="../bootstrap/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../bootstrap/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bootstrap/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../bootstrap/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../bootstrap/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bootstrap/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../bootstrap/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../bootstrap/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  $(function () {
+    $('#example2').DataTable()
+   
+  })
+</script>
     		
    </body>
        </html>

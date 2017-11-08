@@ -21,11 +21,7 @@
 
 </head>
 
-<<<<<<< HEAD
-<body class="">
-=======
 <body class="body-cat">
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
 	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   		<div class="container">
 			<div class="navbar-header">
@@ -64,42 +60,37 @@
 	 </div>
 <!-- /container -->
     </nav>
-<<<<<<< HEAD
-    <div class="container-fluid container-recad" >
-    	<div class="row">
-    		<div class="col-md-4"><img src="../imagens/fifa18p4.jpg" style="width: 613px; height: 100%;"></div>
-    		<div class="col-md-7"></div>
-
-    			
-  				
-
-</div>
-</div>
-=======
     <div class="">
     <div class="container" >
     	<div class="row">
-    		<div class="col-md-4"><h1 class="panton" style="color: white ; padding-top: 90px;padding-bottom: 50px">Catalogo jogos</h1></div>
-      </div>
-    </div>
-     <div class="container" >
-      <div class="row">
-        <?php
+    		<div class="col-md-12 " style="background-color: white;">
+              <div class="col-md-6 " style="padding-top: 40px">
+          <h2 class="panton">meu jogos</h2>
+           
+</div>
+<div class="col-md-6 " style="padding-top: 50px;">
+            <button type="button" class="btn btn-primary " style="float: right;">Adicionar Jogos</button>
+            
+
+          </div>
+ <div class="col-md-12 ">
+ <?php
           for($i=0;$i<18;$i++)
         {
 ?>
-        <div class="col-sm-6 col-md-2" style="padding-top: 40px">
+        <div class="col-sm-6 col-md-2" style="padding-top: 10px">
           <div class="thumbnail">
           <div class="text-center">
           <img src="../imagens/fifa18p4.jpg" style="width: 150px; height: 100%;">
           <div class=" text-center">
             <p class="text-cat panton">nome do jogo</p>
+            <button type="button" class="btn btn-danger">retirar</button>
           </div>
         </div>
         </div></div>
         <?php } ?>
-
-          
+        </div>
+          </div></div>
 </div>
 </div>
 
@@ -120,7 +111,6 @@
       </div>
     z
   </section>
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
     		
     		
    </body>
