@@ -41,9 +41,11 @@ foreach($cate as $i){
 }
 
 foreach($plata as $v){
-	$salvarplataforma = "INSERT INTO `jogosplataforma`(`idPlataforma`, `IdJogos`) VALUES ('$ultimoid','$v')";
+	$salvarplataforma = "INSERT INTO `jogosplataforma`(`idPlataforma`, `IdJogos`) VALUES ('$v','$ultimoid')";
 	$resultado = mysqli_query($conexao, $salvarplataforma);
- 	var_dump($resultado);
+ 	//var_dump($resultado);
 }
+echo '<script type="text/javascript">alert("Jogo Cadastrado com Sucesso")</script>';
+header('Location: ../cadastroJogos.php');
 
 ?>
