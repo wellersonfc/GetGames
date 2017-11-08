@@ -1,72 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php 
-//posta cadastro de usuario;
 
+//Salvar Imagem do jogo
+if(isset($_FILES['arquivo'])){
+      $new_name = $_FILES['arquivo']['name']; //Definindo um novo nome para o arquivo
+      $dir = '../imagens/'; 
+      move_uploaded_file($_FILES['arquivo']['tmp_name'], $dir.$new_name); //Fazer upload do arquivo
+   }
+
+//posta cadastro de usuario;
 $njogos = $_POST['nomejogo'];
 $desen= $_POST['desenvolvedor'];
 $datajogo= $_POST['datajogo'];
 $cate= $_POST['categoria'];
 $plata= $_POST['plataforma'];
-$img = $_POST['arquivo'];
+$img = $_FILES['arquivo']['name'];
 $des = $_POST['descricao'];
 
 //Importação da do conector
 require '../model/conector.php';
 
+$queryjogos = "INSERT INTO `jogos`(`nome`, `anolancamento`, `descricao`, `imgJogo`, `desenvolvedor_jogo`)
+			VALUES ('$njogos','$datajogo','$des','$img','$desen')";
 
-//impostação do ultimo cadastro
-$query1 = "SELECT class FROM jogos where class =(SELECT max(class) from jogos)";
-
-$id = mysqli_query($conexao, $query1);
-
-$resu = mysqli_fetch_assoc($id);
-
-$ultimoid=intval($resu['class'])+1;
-
-
-if(isset($_FILES['arquivo']['name']) && $_FILES["arquivo"]["error"] == 0)
-{
-
-	$arquivo_tmp = $_FILES['arquivo']['tmp_name'];
-	$nome = $_FILES['arquivo']['name'];
+$resultado = mysqli_query($conexao, $queryjogos);	
 	
 
-	// Pega a extensao
-	$extensao = strrchr($nome, '.');
+//impostação do ultimo cadastro
+$query1 = "SELECT idJogos FROM jogos where idJogos =(SELECT max(idJogos) from jogos)";
+$id = mysqli_query($conexao, $query1);
+$resu = mysqli_fetch_assoc($id);
+$ultimoid=intval($resu['idJogos']);
 
-	// Converte a extensao para mimusculo
-	$extensao = strtolower($extensao);
 
-	// Somente imagens, .jpg;.jpeg;.gif;.png
-	// Aqui eu enfilero as extesões permitidas e separo por ';'
-	// Isso server apenas para eu poder pesquisar dentro desta String
-	if(strstr('.jpg;.jpeg;.gif;.png', $extensao))
-	{
-		// Cria um nome único para esta imagem
-		// Evita que duplique as imagens no servidor.
-		$novoNome = md5(microtime()) . '.' . $extensao;
-		
-		// Concatena a pasta com o nome
-		$destino = 'imagens/' . $novoNome; 
-		
-		// tenta mover o arquivo para o destino
-		if( @move_uploaded_file( $arquivo_tmp, $destino  ))
-		{
-			echo "Arquivo salvo com sucesso em : <strowng>" . $destino . "</strong><br />";
-			echo "<img src=\"" . $destino . "\" />";
-		}
-	}
-}
 
 foreach($cate as $i){
-   	foreach($plata as $v){
-	   $query = "INSERT INTO `jogos`(`nome`, `anolancamento`, `descricao`, `imgJogo`, 
-	   		`JogosCategoria_idJogosCategoria`, `JogosClientes_idJogosClientes`, `desenvolvedor_jogo`,`class`) 
-	   		VALUES 
-	   		('$njogos','$datajogo','$des','$img','$i','$v','$desen','$ultimoid')";
-	   		 
-	   		$resultado = mysqli_query($conexao, $query);
- 			//var_dump($resultado);
- 	}
+	$salvarcategoria = "INSERT INTO `jogoscategoria`(`idJogos`, `idCategoria`) VALUES ('$ultimoid','$i')";
+	$resultado = mysqli_query($conexao, $salvarcategoria);
+ 	//var_dump($resultado);
+}
+
+foreach($plata as $v){
+	$salvarplataforma = "INSERT INTO `jogosplataforma`(`idPlataforma`, `IdJogos`) VALUES ('$ultimoid','$v')";
+	$resultado = mysqli_query($conexao, $salvarplataforma);
+ 	var_dump($resultado);
 }
 
 ?>

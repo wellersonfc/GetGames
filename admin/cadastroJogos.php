@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -7,6 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>AdminControl</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -33,26 +34,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -165,7 +146,7 @@ desired effect
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-    <form action="controller/controllerCadastroGames.php" method="post" class="register">
+    <form action="controller/controllerCadastroGames.php" method="post" enctype="multipart/form-data">
         <p> Nome do Jogo <br>
           <input type="text" name="nomejogo" id="nomejogo" minlength="2" maxlength="100" required />
         </p>
@@ -183,7 +164,7 @@ desired effect
                         <input name="arquivo" type="file" required />
                       </p>
                   </div>
-                                    </div>
+                  </div>
                   </div>
                   </div>
                    <div class="col-md-6">
@@ -298,13 +279,12 @@ desired effect
                           <label >Game Cube</label>
 
                         </div>
-                                            </p>
-                                        <p class="auth-submit">
-                                            <input type="submit" value="Cadastrar">
-                                        </p>  
+                        </p>
+                        <p class="auth-submit">
+                            <input type="submit" value="Cadastrar">
+                        </p>  
 
-                                        </form>
-                  
+    </form>         
       
     </div>
     </div>
