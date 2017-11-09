@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require '../model/conector.php';?>
 <html lang="pt-br">
 
 <head>
@@ -22,44 +23,27 @@
 </head>
 
 <body class="body-cat">
-	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
-  		<div class="container">
-			<div class="navbar-header">
-  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          			<span class="sr-only">alternar navegação</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-         			 <span class="icon-bar"></span>
-        		</button>
-        		<img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    		</div>
-	<div class="collapse navbar-collapse" id="barra-navegacao">   
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+   
+   
+      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+    </div>
+  
+     <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
- 	<ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-       <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-       <li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        	<span class="caret"></span></a>
-        	<ul class="dropdown-menu ">
-         	  <div class="row">
-                <div class="col-md-11">
-                  <li class="dropdown-header"> <a href="verPerfil">
-                  <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                  </a>
-                  <p id="nome">Nomeusuario</p>
-                  <p id="email">mail@gmail.com</p>
-                  <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-                  <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
-                </div>
-              </div>
-            </ul>
-      	</li>
-  	</ul>
-	 </div>
+    <?php include 'menu.php';?>
+ </div>
+</div>
 <!-- /container -->
-    </nav>
+</nav>
     <div class="">
     <div class="container" >
     	<div class="row">
@@ -75,20 +59,38 @@
           </div>
  <div class="col-md-12 ">
  <?php
-          for($i=0;$i<18;$i++)
-        {
-?>
+           session_start(); 
+          $idusus = intval($_SESSION['idGlobal']);
+          $query2 = "SELECT jogosclientes.idjogos FROM jogosclientes WHERE jogosclientes.idcliente = '$idusus'";
+          $dados1 = mysqli_query($conexao, $query2);
+          while ($exibe1 = mysqli_fetch_assoc($dados1)) {
+
+
+              $idj = intval($exibe1['idjogos']);
+
+              $query3 = "SELECT `idJogos`, `nome`, `anolancamento`, `descricao`, `imgJogo`, `desenvolvedor_jogo` FROM `jogos` WHERE jogos.idJogos =' $idj'";
+              $dados3 = mysqli_query($conexao, $query3);
+              while ($exibe2 = mysqli_fetch_assoc($dados3)) {
+
+
+                  ?>
         <div class="col-sm-6 col-md-2" style="padding-top: 10px">
           <div class="thumbnail">
           <div class="text-center">
-          <img src="../imagens/fifa18p4.jpg" style="width: 150px; height: 100%;">
+          <img src="../admin/imagens/<?php echo $exibe2['imgJogo']?>" style="width: 150px; height: 100%;">
           <div class=" text-center">
-            <p class="text-cat panton">nome do jogo</p>
-            <button type="button" class="btn btn-danger">retirar</button>
+            <p class="text-cat panton"><?php echo $exibe2['nome']?></p>
+            <a href="../controller/retirarjogos.php?id=<?php echo $exibe2['idJogos'];?>"><button type="button" class="btn btn-danger">retirar</button></a>
           </div>
         </div>
         </div></div>
-        <?php } ?>
+                  <?php 
+
+
+
+                }
+           } 
+            ?>
         </div>
           </div></div>
 </div>

@@ -28,7 +28,7 @@
   if($resultado==true){
     header('Location:../view/home.php');
   }else{
-
+    header('Location:../view/home.php');
   }
 
 ?>

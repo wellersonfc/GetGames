@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="painelADM.html" class="logo">
+    <a href="home.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>CTL</span>
       <!-- logo for regular state and mobile devices -->
@@ -118,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <li class="header">MENU NAVEGAÇÃO</li>
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Cadastro de jogos</span></a></li>
-        <li><a href="pages/usuarios/controleUsuarios.html"><i class="fa fa-link"></i> <span>Controle de usuario</span></a></li>
+        <li><a href="controleUsuarios.php"><i class="fa fa-link"></i> <span>Controle de usuario</span></a></li>
        
       </ul>
       <!-- /.sidebar-menu -->

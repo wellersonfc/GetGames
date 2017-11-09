@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Get Games - Trabalho de PI</title>
+  <title>GetGames</title>
 
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap/css/estilo.css" rel="stylesheet">
@@ -34,7 +34,7 @@
         </button>
 
         <a href="index.html" class="navbar-brand">
-          <span class="img-logo">Get Games</span>
+          <span class="img-logo">GetGames</span>
         </a>
 
       </div>
@@ -68,7 +68,7 @@
 
     <div class="col-md-5">
       <div>
-        <h1 class="txt-alinharh1">TROCAR OU COMPRAR? </h1>
+        <h1 class="txt-alinharh1">VENDER, TROCAR OU COMPRAR ? </h1>
         <h3 class="txt-alinharh3">A QUALQUER HORA EM QUALQUER LUGAR</h3>
         <a href="">
           <img class="img-saiba img-responsive" src="imagens/saiba.png" />
@@ -104,12 +104,12 @@
   <section id="cinzaEscuro" class="section-cinzaEscuro">
     <div class="container content-section text-center section-cinzaEscuro-text">
       <div class="col-md-12 text-center">
-        <h1 class="section-cinzaEscuro-text">Lorem Ipsum é simplesmente uma simulação </h1>
-        <p class="txt-p">
-          Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o
-          século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de
-          modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica,
-          permanecendo essencialmente inalterado.
+        <h1 class="section-cinzaEscuro-text">Praticidade que você respeita </h1></br>
+        <p class="txt-p" align="justify">
+      Com a GetGames fica muito mais fácil encontrar uma pechincha pelo jogo dos sonhos.</br>
+      Você não precisa perder horas procurando aquele Jack Sparrow que so traz dor de cabeça.</br>
+      Apenas faça seu cadastro e tenha acesso a melhor biblioteca nerd desse multiverso.</br></br>
+      <h1 class="section-cinzaEscuro-text" align="left">Que a força esteja com você...</h1>
         </p>
 
       </div>
@@ -132,7 +132,7 @@
           </p>
         </div>
       </div>
-    z
+    </footer>
 
   </section>
 

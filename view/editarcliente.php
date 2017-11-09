@@ -1,141 +1,144 @@
+<?php require_once '../model/conector.php'; 
+
+session_start(); 
+
+$id = intval($_SESSION['idGlobal']);
+
+echo $id;
+
+$qq = "SELECT * FROM cliente WHERE idCliente = '$id'";
+
+$clientes = mysqli_query($conexao, $qq);
+
+$resu = mysqli_fetch_assoc($clientes);
+
+?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 2 | Log in</title>
 
-    <title>Get Games - Trabalho de PI</title>
 
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bootstrap/css/estilo.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-    <script src="../bootstrap/js/javascript.js"></script>
+    <link href="js_jquery/index.js">
 
 </head>
 
-<body class="body-recad">
-	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
-  		<div class="container">
-			<div class="navbar-header">
-  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          			<span class="sr-only">alternar navegação</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-         			 <span class="icon-bar"></span>
-        		</button>
-        		<img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    		</div>
-	<div class="collapse navbar-collapse" id="barra-navegacao">   
-    <!-- /container -->
- 	<ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-       <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-       <li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        	<span class="caret"></span></a>
-        	<ul class="dropdown-menu ">
-         	  <div class="row">
-                <div class="col-md-11">
-                  <li class="dropdown-header"> <a href="verPerfil">
-                  <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                  </a>
-                  <p id="nome">Nomeusuario</p>
-                  <p id="email">mail@gmail.com</p>
-                  <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-                  <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
+<body>
+
+    <body>
+        <div class=login-page>
+
+            <div class=row>
+                <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+                    <img class="logo-cad" src="../imagens/logo.png"></img>
                 </div>
-              </div>
-            </ul>
-      	</li>
-  	</ul>
-	 </div>
-<!-- /container -->
-    </nav>
-    <div class="container-fluid container-recad" >
-    	<div class="row">
-    		<div class="col-md-3">
-    		</div>
-    		
-    		<div class="col-md-6 grad" >
-    			<div class="row">
-    				<h2 class="text-center texth2">EDITAR CADASTRO </h2>
-    				<div class="col-md-6 ">
-    					<a href="">
-          <img src="http://placehold.it/250x250" alt="Alternate Text" class="img-responsive"/>
-          <form method="post" class="register " action="../controller/cadastroUsuario.php"> <br> 
-          	<input type="file" name="Arquivo" id="Arquivo">
-          	
-          
+            </div>
 
-                </a></div>
-                <div class="col-md-4">
-                	    <input class="form-control form-page form-recad" type="text" name="nome" id="nome" minlength="2" maxlength="100"
-                                            placeholder="Nome completo" required />
-                                       
+            <main id="main" class="site-main">
+                <div class="cont maincont">
 
 
-                                        <input class=" form-control form-page form-recad " type="text" name="cpf" id="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
-                                            placeholder="Cpf" required />
-                                       
+                    <article class="page-cont">
+                        <div class="page-styling">
 
 
-                                        <input class="form-control form-page form-recad" type="email" name="email" id="email" maxlength="100"
-                                            placeholder="Email" required />
-                                       
+                            <div class="auth-wrap ">
+                                <div class="auth-col col-md-12">
+                                    <h3 class="cad-esquerda">Cadastro</h3>
+                                </div>
+
+                                <div class="auth-col col-md-6">
+
+                                    <form method="post" class="register" action="../controller/editarUsuario.php">
+
+                                        <input class=" form-cadastro-esquerda form-control form-page form-wi" type="text" name="nome" id="nome" minlength="2" maxlength="100"
+                                            placeholder="Nome completo" value="<?php echo $resu['nomeCliente'] ?>" required />
+                                        <br>
 
 
-                                        <input class="form-control form-page form-recad" type="password" name="senha" id="senha" maxlength="100"
+                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="cpf" id="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
+                                            placeholder="Cpf" required value="<?php echo $resu['cpf'] ?>" />
+                                        <br>
+
+
+                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="email" name="email" id="email" maxlength="100"
+                                            placeholder="Email" required value="<?php echo $resu['emailCliente'] ?>" />
+                                        <br>
+
+
+                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="password" name="senha" id="senha" maxlength="100"
                                             placeholder="Senha" required />
-                                     
+                                        <br>
 
 
-                                        <input class="form-control form-page form-recad " type="text" name="telefone" id="telefone" maxlength="14"
-                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Telefone" required />
-                                        
-
-                                        <input class=" form-control form-page form-recad " type="text" name="whatsapp" id="whatsapp" maxlength="14"
-                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Whatsapp" />
-                                            <input class=" form-control form-page form-recad " type="text" name="cep" id="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"
-                                        placeholder="CEP" required />
-                                    
-
-                                    <input class="  form-control form-page form-recad" type="text" name="estado" id="estado" placeholder="Estado"
-                                        required/>
-                                    
-
-                                    <input class=" form-control form-page form-recad " type="text" name="cidade" id="cidade" placeholder="Cidade"
-                                        required/>
-                                   
-
-                                    <input class=" form-control form-page form-recad" type="text" name="bairro" id="bairro" placeholder="Bairro"
-                                        required />
-                                    
-
-                                    <input class=" form-control form-page form-recad " type="text" name="endereco" id="endereco" placeholder="Endereço"
-                                        required/>
-                                   
+                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="telefone" id="telefone" maxlength="14"
+                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Telefone" required value="<?php echo $resu['telefone'] ?>" />
+                                        <br>
 
 
-                                    <input class=" form-control form-page form-recad" type="text" name="numero" id="numero" placeholder="Numero"
+                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="whatsapp" id="whatsapp" maxlength="14"
+                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Whatsapp" value="<?php echo $resu['whatsapp'] ?>" />
+                                        <br>
+
+
+                                </div>
+                                <div class="auth-col col-md-6">
+
+
+                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="cep" id="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"
+                                        placeholder="CEP" required value="<?php echo $resu['cep'] ?>" />
+                                    <br>
+
+                                    <input class=" form-cadastro-direita form-control form-page form-wi" type="text" name="estado" id="estado" placeholder="Estado"
                                         required />
                                     <br>
-                                    <button type="submit" class="panton btn btn-primary ">EDITAR</button>
-                                
-                                    
+
+                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="cidade" id="cidade" placeholder="Cidade"
+                                        required/>
+                                    <br>
+
+                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="bairro" id="bairro" placeholder="Bairro"
+                                        required />
+                                    <br>
+
+                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="endereco" id="endereco" placeholder="Endereço"
+                                        required/>
+                                    <br>
+
+
+                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="numero" id="numero" placeholder="Numero"
+                                        required value="<?php echo $resu['numero'] ?>" />
+                                    <br>
+                                </div>
+                                <div class="col-xs-10">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat btn-cad">Editar</button>
                                 </div>
 
                                 </form>
-       
-   </body>
-       </html>
-                                
+                            </div>
+                        </div>
+            </main>
 
+
+
+            <!-- jQuery 3 -->
+            <script src="bower_components/jquery/dist/jquery.min.js"></script>
+            <!-- Bootstrap 3.3.7 -->
+            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!-- Arquivo JQuery-->
+            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+            <script src="js/index.js"></script>
+
+
+
+    </body>
+
+</html>

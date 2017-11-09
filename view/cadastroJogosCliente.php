@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require '../model/conector.php';?>
 <html lang="pt-br">
 
 <head>
@@ -23,70 +24,109 @@
 </head>
 
 <body class="body-recad">
-	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
-  		<div class="container">
-			<div class="navbar-header">
-  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          			<span class="sr-only">alternar navegação</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-         			 <span class="icon-bar"></span>
-        		</button>
-        		<img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    		</div>
-	<div class="collapse navbar-collapse" id="barra-navegacao">   
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+   
+   
+      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+    </div>
+  
+     <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
- 	<ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-       <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-       <li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        	<span class="caret"></span></a>
-        	<ul class="dropdown-menu ">
-         	  <div class="row">
-                <div class="col-md-11">
-                  <li class="dropdown-header"> <a href="verPerfil">
-                  <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                  </a>
-                  <p id="nome">Nomeusuario</p>
-                  <p id="email">mail@gmail.com</p>
-                  <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-                  <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
-                </div>
-              </div>
-            </ul>
-      	</li>
-  	</ul>
-	 </div>
+    <?php include 'menu.php';?>
+ </div>
+</div>
 <!-- /container -->
-    </nav>
+</nav>
     <div class="container-fluid container-info" >
     	<div class="row">
         <div class="col-md-2"></div>
     		<div class="col-md-8">
             <div class="col-md-12" style="background-color: white; padding: 25px">
             <div class="box-body">
-              <table id="example2" class="table  table-striped">
+              <table id="example2" class="table  table-striped text-center">
                 <thead>
                 <tr>
-                  <th>jogo</th>
                   <th></th>
-                  
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                      <?php
-          for($i=0;$i<18;$i++)
-        {
-?>
+              <?php
+                //for para rodar caracteriscata game
+              $query = "SELECT * FROM `jogos`";
+              $dados = mysqli_query($conexao, $query);
+              $resu = mysqli_fetch_assoc($dados);
+              while ($exibe = mysqli_fetch_assoc($dados)) {
+              ?>
                 
                 <tr>
-                  <td><a href="infojogo.php"><img src="../imagens/fifa18p4.jpg"  style="width: 100px ;"></td></a>
-                  <td><h4 class="panton">Fifa 18<small>Playstation</h4>
-                    <p>O jogo possui diversas melhorias, se comparado a sua versão anterior. Suas animações de movimentação e finalização possibilitam uma batida e cabeceio mais fluidos na bola, combinando-se para aumentar o potencial de finalizações dramáticas e incríveis. O game também trouxe mudanças em sua jogabilidade, possibilitando o jogador a mandar a bola direto para a área durante o cruzamento.</p>
+                  <td>
+                      <img src="../admin/imagens/<?php  echo $exibe['imgJogo'] ?>"  style="width: 100px;">
+                  </td>
+                  <td class="text-center">
+                    <?php echo $exibe['nome']?>
+                  </td>
+                  <td>
+                    <?php
+                        $valor = intval($exibe['idJogos']);
+                        $query2 = "SELECT jogoscategoria.idCategoria FROM jogoscategoria WHERE idJogos = '$valor'";
+                        $dados1 = mysqli_query($conexao, $query2);
+                          while ($exibe1 = mysqli_fetch_assoc($dados1)) {
+                            
+                            $valor2 = intval($exibe1['idCategoria']);
 
-</td>
+                              $querycategoria= "SELECT * FROM `categoria` WHERE idCategoria = $valor2";
+                                 $categoria = mysqli_query($conexao, $querycategoria);
+                                 while ($exibe3 = mysqli_fetch_assoc($categoria)) {
+
+                                    echo utf8_encode($exibe3['nomeCategoria']);
+                                     echo "<br>"; 
+                                      
+                                 }
+                            }
+                    ?>
+                  </td>
+                  <td>
+                  </td>
+                  <td>
+                    <?php
+                        $valor = intval($exibe['idJogos']);
+                        $query2 = "SELECT idPlataforma FROM `jogosplataforma` WHERE  idJogos = '$valor'";
+                        $dados1 = mysqli_query($conexao, $query2);
+                          while ($exibe1 = mysqli_fetch_assoc($dados1)) {
+                            
+                            $valor2 = intval($exibe1['idPlataforma']);
+
+                              $querycategoria= "SELECT * FROM `plataforma` WHERE idPlataformas = '$valor2'";
+                                 $categoria = mysqli_query($conexao, $querycategoria);
+                                 while ($exibe3 = mysqli_fetch_assoc($categoria)) {
+
+                                    echo utf8_encode($exibe3['nome']);
+                                     echo "<br>"; 
+                                      
+                                 }
+                            }
+                    ?>
+                  </td>
+                  <td>
+                    <a href="../view/infojogo.php?id=<?php echo $exibe['idJogos'];?>"><button class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Tenho Interesse</button></a><br>
+                  </td>
+                  <td>
+                    <a href="../controller/colecao.php?id=<?php echo $exibe['idJogos'];?>"><button class="btn btn-warning"><i class="fa fa-plus" aria-hidden="true"></i>Adicionar à Minha Coleção</button></a>
+                  </td>
                 </tr>
               <?php } ?>
 
@@ -121,6 +161,18 @@
     $('#example2').DataTable()
    
   })
+</script>
+<script type="text/javascript">
+  $("#imagem").bind('mouseover',function(){
+    
+     $(this).animate({height:"200px",width:"200px"});
+   
+});
+$("#imagem").bind('mouseout',function(){
+    
+       $(this).animate({height:"76px",width:"75px"});
+      
+});
 </script>
     		
    </body>

@@ -21,11 +21,7 @@
 
 </head>
 
-<<<<<<< HEAD
-<body class="">
-=======
 <body class="body-cat">
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
 	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   		<div class="container">
 			<div class="navbar-header">

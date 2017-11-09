@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<?php require '../model/conector.php';?>
 <head>
 
     <meta charset="utf-8">
@@ -23,57 +23,47 @@
 </head>
 
 <body class="body-recad">
-	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
-  		<div class="container">
-			<div class="navbar-header">
-  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          			<span class="sr-only">alternar navegação</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-         			 <span class="icon-bar"></span>
-        		</button>
-        		<img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    		</div>
-	<div class="collapse navbar-collapse" id="barra-navegacao">   
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+   
+   
+      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+    </div>
+  
+     <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
- 	<ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-       <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-       <li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        	<span class="caret"></span></a>
-        	<ul class="dropdown-menu ">
-         	  <div class="row">
-                <div class="col-md-11">
-                  <li class="dropdown-header"> <a href="verPerfil">
-                  <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                  </a>
-                  <p id="nome">Nomeusuario</p>
-                  <p id="email">mail@gmail.com</p>
-                  <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-                  <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
-                </div>
-              </div>
-            </ul>
-      	</li>
-  	</ul>
-	 </div>
+    <?php include 'menu.php';?>
+ </div>
+</div>
 <!-- /container -->
-    </nav>
+</nav>
+<!-- /container -->
+    <?php
+      
+      $b = intval($_GET['id']);
+              $query = "SELECT * FROM `jogos` WHERE idJogos = '$b'";
+              $dados = mysqli_query($conexao, $query);
+              $resu = mysqli_fetch_assoc($dados);
+    ?>
     <div class="container-fluid container-info" >
     	<div class="row">
     		<div class="col-md-2">
     		</div>
     		<div class="col-md-8 form-info">
     		<div class="col-md-5">
-    			<img src="../imagens/fifa18p4.jpg" style="width: 300px; height: 100%;">
-          <h4>Desenvolvedor:<small> EAGames</small><h4>
-          <h4>Data de lançamento:<small> 20/10/2017</small><h4>
-          <h4>Categoria:<small> Esportes</small><h4>
+    			<img src="../admin/imagens/<?php echo  $resu['imgJogo']?>" style="width: 300px; height: 100%;">
+          <h4>Desenvolvedor:<small><?php echo  $resu['desenvolvedor_jogo']?></small><h4>
+          <h4>Data de lançamento:<small><?php echo  $resu['anolancamento']?></small><h4>
     		</div>
     		<div class="col-md-6">
-    			<h1>Fifa 18<small> Playstation 4</small></h1>
+    			<h1><?php echo  $resu['nome']?></h1>
     				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240037.675804748!2d-44.332391420999265!3d-19.941730475969987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c24a5fb01f9b%3A0xdae51d9facff118f!2sBetim%2C+MG!5e0!3m2!1spt-BR!2sbr!4v1509799813673" width="500" height="325" frameborder="0" style="border:0" allowfullscreen></iframe>
     			</div>
             <div class="col-md-12">
@@ -81,235 +71,45 @@
               <table id="example2" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Nome</th>
+                  <th>Telefone</th>
+                  <th>Whatsapp</th>
+                  <th>Cep</th>
+                  <th>Estado</th>
+                  <th>Cidade</th>
+                  <th>Bairro</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php
+
+                $vai = "SELECT jogosclientes.idcliente FROM `jogosclientes` WHERE jogosclientes.idjogos = '$b'";
+                  $vaivai = mysqli_query($conexao, $vai);
+                  while ($exibe1 = mysqli_fetch_assoc($vaivai)) {
+                    $v = intval($exibe1['idcliente']);
+
+                          $vai1 = "SELECT * FROM `cliente` WHERE cliente.idCliente = '$v'";
+                          $vaivai1 = mysqli_query($conexao, $vai1);
+                          while ($exibe11 = mysqli_fetch_assoc($vaivai1)) {
+                ?>
                 <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
+                  <td><?php echo $exibe11['nomeCliente']?></td>
+                  <td><?php echo $exibe11['telefone']?></td>
+                  <td><?php echo $exibe11['whatsapp']?></td>
+                  <td><?php echo $exibe11[ 'cep']?> </td>
+                  <td><?php echo $exibe11[ 'uf']?> </td>
+                  <td><?php echo $exibe11[ 'cidade']?> </td>
+                  <td><?php echo $exibe11[ 'bairro']?> </td>
                 </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5</td>
-                  <td>C</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.5
-                  </td>
-                  <td>Win 95+</td>
-                  <td>5.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 6
-                  </td>
-                  <td>Win 98+</td>
-                  <td>6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet Explorer 7</td>
-                  <td>Win XP SP2+</td>
-                  <td>7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>AOL browser (AOL desktop)</td>
-                  <td>Win XP</td>
-                  <td>6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Firefox 1.0</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Firefox 1.5</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Firefox 2.0</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Firefox 3.0</td>
-                  <td>Win 2k+ / OSX.3+</td>
-                  <td>1.9</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Camino 1.0</td>
-                  <td>OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Camino 1.5</td>
-                  <td>OSX.3+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Netscape 7.2</td>
-                  <td>Win 95+ / Mac OS 8.6-9.2</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Netscape Browser 8</td>
-                  <td>Win 98SE+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Netscape Navigator 9</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.0</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.1</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.1</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.2</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.2</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.3</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.3</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.4</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.4</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.5</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.6</td>
-                  <td>Win 95+ / OSX.1+</td>
-                  <td>1.6</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.7</td>
-                  <td>Win 98+ / OSX.1+</td>
-                  <td>1.7</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.8</td>
-                  <td>Win 98+ / OSX.1+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Seamonkey 1.1</td>
-                  <td>Win 98+ / OSX.2+</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Gecko</td>
-                  <td>Epiphany 2.20</td>
-                  <td>Gnome</td>
-                  <td>1.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.2</td>
-                  <td>OSX.3</td>
-                  <td>125.5</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 1.3</td>
-                  <td>OSX.3</td>
-                  <td>312.8</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>Webkit</td>
-                  <td>Safari 2.0</td>
-                  <td>OSX.4+</td>
-                  <td>419.3</td>
-                  <td>A</td>
-                </tr>
-    
+
+              <?php
+                    }
+                 }
+
+
+              ?>
                 </tbody>
                 <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
-                </tr>
                 </tfoot>
               </table>
             </div>

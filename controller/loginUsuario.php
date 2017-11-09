@@ -30,7 +30,7 @@ if($cont > 0 ){
 
   $_SESSION['idGlobal'] = $resu['idCliente'];
 
-    header('Location:../view/favoritos.php');
+    header('Location:../view/home.php');
   }else{
     header('Location:../view/login.php');
   }

@@ -20,8 +20,7 @@
 
 <body class="home-body">
 
-
-  <nav class="navbar navbar-relative navbar-inverse navbar-transparente">
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   <div class="container">
 <div class="navbar-header">
   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
@@ -37,41 +36,19 @@
   
      <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
- <ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-      <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-      
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu ">
-          <div class="row">
-                            <div class="col-md-11">
-          <li class="dropdown-header"> <a href="verPerfil">
-          <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                </a>
-            <p id="nome">Nomeusuario</p>
-            <p id="email">mail@gmail.com</p>
-            <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-             <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
-         </div>
-         </div>
-         </ul>
-      </li>
-  </ul>
+    <?php include 'menu.php';?>
  </div>
+</div>
 <!-- /container -->
     </nav>
-    <!-- /nav -->
     <div class="capa-home">
 
         <div class="capa-txt">
-            <h1 class="capa-txt-h1">Cos’è Lorem Ipsum?</h1>
-            <p class="capa-txt-p">
-                Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo
-                segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri
-                e li assemblò per preparare un testo campione.
+            <h1 class="capa-txt-h1"></br></br></br></br> Sinta se à vontade para explorar </h1></br></br>
+            <p class="capa-txt-p" >
+                Veja aqui as possibilidades que aguardam, como amante dos jogos você terá acesso a uma infinidade de jogos multiplataforma.
+                Cadastre, busque, conheça as novidades interagindo com a plataforma e aproveite nossas pechinchas</br></br></br></br></br></br></br></br></br></br></br>
+                <h1 class="capa-txt-h1" align="right"> Divirta-se &nbsp&nbsp&nbsp </h1>
             </p>
 
         </div>
