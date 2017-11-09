@@ -68,7 +68,11 @@
 
     <div class="col-md-5">
       <div>
+<<<<<<< HEAD
         <h1 class="txt-alinharh1">VENDER, TROCAR OU COMPRAR ? </h1>
+=======
+        <h1 class="txt-alinharh1">VENDER, TROCAR OU COMPRAR	? </h1>
+>>>>>>> 86a5ca31f38cc8cf1158996a5608d4017a04589c
         <h3 class="txt-alinharh3">A QUALQUER HORA EM QUALQUER LUGAR</h3>
         <a href="">
           <img class="img-saiba img-responsive" src="imagens/saiba.png" />
@@ -106,10 +110,17 @@
       <div class="col-md-12 text-center">
         <h1 class="section-cinzaEscuro-text">Praticidade que você respeita </h1></br>
         <p class="txt-p" align="justify">
+<<<<<<< HEAD
       Com a GetGames fica muito mais fácil encontrar uma pechincha pelo jogo dos sonhos.</br>
       Você não precisa perder horas procurando aquele Jack Sparrow que so traz dor de cabeça.</br>
       Apenas faça seu cadastro e tenha acesso a melhor biblioteca nerd desse multiverso.</br></br>
       <h1 class="section-cinzaEscuro-text" align="left">Que a força esteja com você...</h1>
+=======
+			Com a GetGames fica muito mais fácil encontrar uma pechincha pelo jogo dos sonhos.</br>
+			Você não precisa perder horas procurando aquele Jack Sparrow que so traz dor de cabeça.</br>
+			Apenas faça seu cadastro e tenha acesso a melhor biblioteca nerd desse multiverso.</br></br>
+			<h1 class="section-cinzaEscuro-text" align="left">Que a força esteja com você...</h1>
+>>>>>>> 86a5ca31f38cc8cf1158996a5608d4017a04589c
         </p>
 
       </div>
