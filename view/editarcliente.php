@@ -14,131 +14,113 @@ $resu = mysqli_fetch_assoc($clientes);
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Log in</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Get Games | Editar Cadastro</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bootstrap/css/login.css" rel="stylesheet">
+   <link href="../bootstrap/css/estilo.css" rel="stylesheet">
+  <!-- jQuery 3 -->
+  <script src="../bootstrap/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="../bootstrap/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<style>
+   .login-page
+{
+    background-image: url('../imagens/bgl.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: cover;
+}
+</style>
 
-
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bootstrap/css/estilo.css" rel="stylesheet">
-    <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
-    <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
-    <link href="js_jquery/index.js">
-
-</head>
-
-<body>
-
-    <body>
-        <div class=login-page>
-
-            <div class=row>
-                <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
-                    <img class="logo-cad" src="../imagens/logo.png"></img>
-                </div>
-            </div>
-
-            <main id="main" class="site-main">
-                <div class="cont maincont">
-
-
-                    <article class="page-cont">
-                        <div class="page-styling">
-
-
-                            <div class="auth-wrap ">
-                                <div class="auth-col col-md-12">
-                                    <h3 class="cad-esquerda">Cadastro</h3>
-                                </div>
-
-                                <div class="auth-col col-md-6">
-
-                                    <form method="post" class="register" action="../controller/editarUsuario.php">
-
-                                        <input class=" form-cadastro-esquerda form-control form-page form-wi" type="text" name="nome" id="nome" minlength="2" maxlength="100"
+<div class="login-page">
+       
+	<nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -42px">
+  <div class="container">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+          <span class="sr-only">alternar navegação</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+   
+   
+      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+    </div>
+  
+     <div class="collapse navbar-collapse" id="barra-navegacao">   
+    <!-- /container -->
+    <?php include 'menu.php';?>
+ </div>
+</div>
+<!-- /container -->
+    </nav>
+    <div class=row>
+    <div class="container-fluid" >
+    	<div class="row">
+    		
+    		
+    		<div class="col-md-6 col-md-offset-3 grad " style="margin-top: 100px;" >
+    			<div class="row text-center">
+              <div class="col-sm-offset-3 col-sm-6 ">
+    				
+                	    <input class="form-control form-r form-page " type="text" name="nome" id="nome" minlength="2" maxlength="100"
                                             placeholder="Nome completo" value="<?php echo $resu['nomeCliente'] ?>" required />
-                                        <br>
+                       <input class="form-control form-r form-page " type="password" name="senha" id="senha" maxlength="100"
+                                            placeholder="Senha"  value="<?php echo $resu['telefone'] ?>" required />
+                        <input class="form-control form-r form-page  " type="text" name="telefone" id="telefone" maxlength="14"
+                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Telefone" value="<?php echo $resu['telefone'] ?>" required />
+                        <input class=" form-control  form-r form-page " type="text" name="whatsapp" id="whatsapp" maxlength="14"
+                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Whatsapp" value="<?php echo $resu['whatsapp'] ?>"  />
+                         <input class=" form-control form-r form-page  " type="text" name="cep" id="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"
+                                        placeholder="CEP" value="<?php echo $resu['cep'] ?>" required />
+                                    
 
-
-                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="cpf" id="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"
-                                            placeholder="Cpf" required value="<?php echo $resu['cpf'] ?>" />
-                                        <br>
-
-
-                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="email" name="email" id="email" maxlength="100"
-                                            placeholder="Email" required value="<?php echo $resu['emailCliente'] ?>" />
-                                        <br>
-
-
-                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="password" name="senha" id="senha" maxlength="100"
-                                            placeholder="Senha" required />
-                                        <br>
-
-
-                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="telefone" id="telefone" maxlength="14"
-                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Telefone" required value="<?php echo $resu['telefone'] ?>" />
-                                        <br>
-
-
-                                        <input class="form-cadastro-esquerda form-control form-page form-wi" type="text" name="whatsapp" id="whatsapp" maxlength="14"
-                                            OnKeyPress="formatar('## # ####-####', this)" placeholder="Whatsapp" value="<?php echo $resu['whatsapp'] ?>" />
-                                        <br>
-
-
-                                </div>
-                                <div class="auth-col col-md-6">
-
-
-                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="cep" id="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"
-                                        placeholder="CEP" required value="<?php echo $resu['cep'] ?>" />
-                                    <br>
-
-                                    <input class=" form-cadastro-direita form-control form-page form-wi" type="text" name="estado" id="estado" placeholder="Estado"
-                                        required />
-                                    <br>
-
-                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="cidade" id="cidade" placeholder="Cidade"
+                         <input class="  form-control form-r form-page " type="text" name="estado" id="estado" placeholder="Estado"
                                         required/>
-                                    <br>
+                                    
 
-                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="bairro" id="bairro" placeholder="Bairro"
-                                        required />
-                                    <br>
-
-                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="endereco" id="endereco" placeholder="Endereço"
+                          <input class=" form-control form-r form-page  " type="text" name="cidade" id="cidade" placeholder="Cidade"
                                         required/>
-                                    <br>
+                                   
+
+                          <input class=" form-control form-r form-page " type="text" name="bairro" id="bairro" placeholder="Bairro"
+                                        required />
+                                    
+
+                           <input class=" form-control form-r form-page  " type="text" name="Rua" id="endereco" placeholder="Rua"
+                                        required/>
+                                   
 
 
-                                    <input class="form-cadastro-direita form-control form-page form-wi" type="text" name="numero" id="numero" placeholder="Numero"
-                                        required value="<?php echo $resu['numero'] ?>" />
+                          <input class=" form-control form-r form-page " type="text" name="numero" id="numero" placeholder="Numero"
+                                        required  value="<?php echo $resu['numero'] ?>" />
                                     <br>
-                                </div>
-                                <div class="col-xs-10">
-                                    <button type="submit" class="btn btn-primary btn-block btn-flat btn-cad">Editar</button>
+                          <button type="submit" class="panton btn btn-primary ">EDITAR</button>
+                                
+                                    
                                 </div>
 
                                 </form>
-                            </div>
-                        </div>
-            </main>
+       
+   </body>
+       </html>
+                                
 
-
-
-            <!-- jQuery 3 -->
-            <script src="bower_components/jquery/dist/jquery.min.js"></script>
-            <!-- Bootstrap 3.3.7 -->
-            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-            <!-- Arquivo JQuery-->
-            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
-            <script src="js/index.js"></script>
-
-
-
-    </body>
-
-</html>

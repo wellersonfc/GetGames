@@ -12,8 +12,6 @@
 
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bootstrap/css/estilo.css" rel="stylesheet">
-    <link href="../bootstrap/css/font-awesome.css" rel="stylesheet">
-    <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
      <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -23,7 +21,7 @@
 
 </head>
 
-<body class="body-recad">
+<body style="background-color: #151515">
 <nav class="navbar navbar-relative navbar-inverse navbar-transparente">
   <div class="container">
     <div class="navbar-header">
@@ -50,7 +48,7 @@
         <div class="col-md-2"></div>
     		<div class="col-md-8">
             <div class="col-md-12" style="background-color: white; padding: 25px">
-            <div class="box-body">
+              <div class="table-responsive">
               <table id="example2" class="table  table-striped text-center">
                 <thead>
                 <tr>
@@ -132,6 +130,7 @@
 
       
               </table>
+            </div>
             </div>
             <!-- /.box-body -->
           </div>

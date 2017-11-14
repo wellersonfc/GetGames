@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GetGames</title>
+  <title>GetGames Trabalho de pi</title>
 
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap/css/index.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 
 </head>
 
-<body ">
+<body >
 
 
 <nav class="navbar navbar-relative navbar-inverse navbar-transparente">
@@ -78,7 +78,7 @@
   <section id="cinza" class="">
     <div class="container-fluid section-cinza">
 
-        <div class="col-md-12 text-center " >
+        <div class="col-md-12 text-center" style="padding-bottom: 60px;" >
           <h1>JOGOS ADICIONADOS RECENTEMENTE</h1>
         <h4 > ULTIMOS JOGOS CADASTRADOS PARA COMPRA E VENDA</h4>
         </div>

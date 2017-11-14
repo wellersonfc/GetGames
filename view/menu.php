@@ -6,11 +6,11 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu ">
           <div class="row">
-          <div class="col-md-11">
+          <div class="col-md-6">
           <li class="dropdown-header"> <a href="verPerfil">
                 </a>
-            <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-             <a href="http://getgames.com.br" class="buy-btn navbar-right" id="sair">Sair</a></li>
+            <ul><a href="editarcliente.php" class="buy-btn " id="editar">editar</a></ul>
+             <ul><a href="http://getgames.com.br" class="buy-btn " id="sair">Sair</a></ul></li>
          </div>
          </div>
          </ul>

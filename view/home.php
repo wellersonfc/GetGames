@@ -47,13 +47,10 @@
             <h1 class="capa-txt-h1"></br></br></br></br> Sinta se à vontade para explorar </h1></br></br>
             <p class="capa-txt-p" >
                 Veja aqui as possibilidades que aguardam, como amante dos jogos você terá acesso a uma infinidade de jogos multiplataforma.
-<<<<<<< HEAD
+
                 Cadastre, busque, conheça as novidades interagindo com a plataforma e aproveite nossas pechinchas</br></br></br></br></br></br></br></br></br></br></br>
                 <h1 class="capa-txt-h1" align="right"> Divirta-se &nbsp&nbsp&nbsp </h1>
-=======
-				Cadastre, busque, conheça as novidades interagindo com a plataforma e aproveite nossas pechinchas</br></br></br></br></br></br></br></br></br></br></br>
-				<h1 class="capa-txt-h1" align="right"> Divirta-se &nbsp&nbsp&nbsp </h1>
->>>>>>> 86a5ca31f38cc8cf1158996a5608d4017a04589c
+
             </p>
 
         </div>

@@ -22,45 +22,28 @@
 </head>
 
 <body class="body-cat">
-	<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
-  		<div class="container">
-			<div class="navbar-header">
-  				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          			<span class="sr-only">alternar navegação</span>
-          			<span class="icon-bar"></span>
-          			<span class="icon-bar"></span>
-         			 <span class="icon-bar"></span>
-        		</button>
-        		<img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    		</div>
-	<div class="collapse navbar-collapse" id="barra-navegacao">   
+	<nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -42px">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
+            <span class="sr-only">alternar navegação</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+   
+   
+      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+    </div>
+  
+     <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
- 	<ul class="nav navbar-nav navbar-right"> 
-       <li><a href="#">controle de usuario</a></li>
-       <li><a href="#">controle de games</a></li>
-       <li><a href="#">dados do sitema</a></li>
-       <li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="">Usuario
-        	<span class="caret"></span></a>
-        	<ul class="dropdown-menu ">
-         	  <div class="row">
-                <div class="col-md-11">
-                  <li class="dropdown-header"> <a href="verPerfil">
-                  <img src="http://placehold.it/150x150" alt="Alternate Text" class="img-responsive"/>
-                  </a>
-                  <p id="nome">Nomeusuario</p>
-                  <p id="email">mail@gmail.com</p>
-                  <a href="editarcliente.php" class="buy-btn " id="editar">editar</a>
-                  <a href="#" class="buy-btn navbar-right" id="sair">Sair</a></li>
-                </div>
-              </div>
-            </ul>
-      	</li>
-  	</ul>
-	 </div>
+    <?php include 'menu.php';?>
+ </div>
+</div>
 <!-- /container -->
-    </nav>
-<<<<<<< HEAD
+</nav>
+=
     <div class="container-fluid container-recad" >
     	<div class="row">
     		<div class="col-md-4"><img src="../imagens/fifa18p4.jpg" style="width: 613px; height: 100%;"></div>
@@ -71,7 +54,7 @@
 
 </div>
 </div>
-=======
+
     <div class="">
     <div class="container" >
     	<div class="row">
@@ -116,8 +99,7 @@
       </div>
     z
   </section>
->>>>>>> bf1f294e113b2b86b293f31e57040b2f1233592c
-    		
+
     		
    </body>
        </html>
