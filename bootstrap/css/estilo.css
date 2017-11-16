@@ -1,6 +1,13 @@
 
 .font{
-	font-family: 'Passion One', cursive;
+	font-family: 'Open Sans';
+}
+.fontb{
+font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v15/k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+  unicode-range: 'U+1F00-1FFF';
 }
 nav.navbar-transparente {
 	padding: 10px 0px;
@@ -56,4 +63,8 @@ width: 220px;
 height: 120px;
 
 }
+}
+.text-home{
+	color: white;
+	font-size: :60px;
 }

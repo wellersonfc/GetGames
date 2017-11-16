@@ -70,7 +70,7 @@
     	<div class="row" style="background-color: white; margin-top: 100px;">
     		<div class="col-sm-12">
             <div class="col-sm-3 " style="padding-top: 40px">
-              <h2 class="font">Meus jogos</h2>
+              <h2 class="fontb">Meus jogos</h2>
             </div>
             <div class="col-sm-9 " style="padding-top: 50px;">
               <button type="button" class="btn btn-primary " style="float: right;">Adicionar Jogos</button>

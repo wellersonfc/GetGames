@@ -74,7 +74,7 @@
     <div class="container-fluid container-info" >
     	<div class="row">
     		<div class="col-sm-offset-2 col-sm-8 grad" style="margin-top: 60px;">
-          <h1 class="navbar-right font"><?php echo  $resu['nome']?></h1>
+          <h1 class="navbar-right fontb"><?php echo  $resu['nome']?></h1>
     		<div class="col-sm-5 text-center">
     			<img src="../admin/imagens/<?php echo  $resu['imgJogo']?>" style="width: 300px; height: 100%;" class="img-responsive ">
           <h4>Desenvolvedor: <small><?php echo  $resu['desenvolvedor_jogo']?></small><h4>

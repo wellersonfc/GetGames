@@ -11,8 +11,7 @@
 
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="bootstrap/css/index.css" rel="stylesheet">
-  <link href="bootstrap/css/font-awesome.css" rel="stylesheet">
-  <link href="bootstrap/css/font-awesome.min.css" rel="stylesheet">
+  
 
 
 </head>

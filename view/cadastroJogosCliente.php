@@ -18,12 +18,32 @@
 
 
     <script src="../bootstrap/js/javascript.js"></script>
+   <style>
+   .bg-page
+{
+    background-image: url('../imagens/bg-cat.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    background-size: cover;
+}
+</style>
 
 </head>
 
-<body style="background-color: #151515">
-<nav class="navbar navbar-relative navbar-inverse navbar-transparente">
+<body >
+  <div class="bg-page">
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -43px; margin-bottom: 30px; ">
   <div class="container">
+
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
             <span class="sr-only">alternar navegação</span>
