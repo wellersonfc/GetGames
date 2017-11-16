@@ -38,26 +38,11 @@
 <body >
 <div class="bg-page">
 <nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -43px; margin-bottom: 30px; ">
-  <div class="container">
-<div class="navbar-header">
-  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-          <span class="sr-only">alternar navegação</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-   
-   
-      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    </div>
-  
-     <div class="collapse navbar-collapse" id="barra-navegacao">   
-    <!-- /container -->
-    <?php include 'menu.php';?>
+ <div class="container">
+    <?php include 'menu/menu.php';?>
  </div>
-</div>
-<!-- /container -->
-    </nav>
+</nav>
+
     <div class="col-sm-6 col-sm-offset-3 text-center" style="padding-top: 120px;padding-bottom: 60px;">
 
     	<h1 class="fontb text-home">Sinta se à vontade para explorar</h1>

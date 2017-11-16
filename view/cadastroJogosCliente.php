@@ -42,26 +42,9 @@
 <body >
   <div class="bg-page">
 <nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -43px; margin-bottom: 30px; ">
-  <div class="container">
-
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-            <span class="sr-only">alternar navegação</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-   
-   
-      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    </div>
-  
-     <div class="collapse navbar-collapse" id="barra-navegacao">   
-    <!-- /container -->
-    <?php include 'menu.php';?>
+ <div class="container">
+    <?php include 'menu/menu.php';?>
  </div>
-</div>
-<!-- /container -->
 </nav>
     <div class="container-fluid container-info" >
     	<div class="row">

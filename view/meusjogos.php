@@ -41,26 +41,10 @@
 
 <body >
   <div class="bg-page">
-<nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -42px">
-  <div class="container">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra-navegacao">
-            <span class="sr-only">alternar navegação</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-   
-   
-      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
-    </div>
-  
-     <div class="collapse navbar-collapse" id="barra-navegacao">   
-    <!-- /container -->
-    <?php include 'menu.php';?>
+<nav class="navbar navbar-relative navbar-inverse navbar-transparente" style="margin: -43px; margin-bottom: 30px; ">
+ <div class="container">
+    <?php include 'menu/menu.php';?>
  </div>
-</div>
-<!-- /container -->
 </nav>
   
 
@@ -72,9 +56,6 @@
             <div class="col-sm-3 " style="padding-top: 40px">
               <h2 class="fontb">Meus jogos</h2>
             </div>
-            <div class="col-sm-9 " style="padding-top: 50px;">
-              <button type="button" class="btn btn-primary " style="float: right;">Adicionar Jogos</button>
-            </div> 
             <div class="col-sm-12 container-info">
             <?php
             session_start(); 
