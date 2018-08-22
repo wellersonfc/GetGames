@@ -62,12 +62,12 @@ $resu = mysqli_fetch_assoc($clientes);
         </button>
    
    
-      <img src="../imagens/logo.png" alt="getgames" width="50%" height="auto" style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
+      <img  style="margin-left: 20px; margin-top: 5px; float: center; display: inline-block;">
     </div>
   
      <div class="collapse navbar-collapse" id="barra-navegacao">   
     <!-- /container -->
-    <?php include 'menu.php';?>
+    <?php include 'menu/menu.php';?>
  </div>
 </div>
 <!-- /container -->
@@ -80,13 +80,17 @@ $resu = mysqli_fetch_assoc($clientes);
     		<div class="col-md-6 col-md-offset-3 grad " style="margin-top: 100px;" >
     			<div class="row text-center">
               <div class="col-sm-offset-3 col-sm-6 ">
+                         <form method="post" class="register" action="../controller/editarUsuario.php">
     				
                 	    <input class="form-control form-r form-page " type="text" name="nome" id="nome" minlength="2" maxlength="100"
                                             placeholder="Nome completo" value="<?php echo $resu['nomeCliente'] ?>" required />
+
                        <input class="form-control form-r form-page " type="password" name="senha" id="senha" maxlength="100"
-                                            placeholder="Senha"  value="<?php echo $resu['telefone'] ?>" required />
+                                            placeholder="Senha"  required />
+
                         <input class="form-control form-r form-page  " type="text" name="telefone" id="telefone" maxlength="14"
                                             OnKeyPress="formatar('## # ####-####', this)" placeholder="Telefone" value="<?php echo $resu['telefone'] ?>" required />
+
                         <input class=" form-control  form-r form-page " type="text" name="whatsapp" id="whatsapp" maxlength="14"
                                             OnKeyPress="formatar('## # ####-####', this)" placeholder="Whatsapp" value="<?php echo $resu['whatsapp'] ?>"  />
                          <input class=" form-control form-r form-page  " type="text" name="cep" id="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"

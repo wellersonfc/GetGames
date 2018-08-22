@@ -126,14 +126,13 @@ align-items: center;
 .footer{
   background-color:#2d2e32;
   color:white;
-  padding-bottom: 160px;
 }
 .imgfooter{
 padding-top:25px;
 }
 
 p{
- font-size: 25px; 
+ font-size: 18px; 
 }
 @media screen and (max-width: 560px) {
     p {
@@ -145,4 +144,68 @@ p{
     h2{
       font-size: 20px;
     }
+}
+.colorse{
+  color:#D8D8D8;
+}
+#sobrenos {
+border-top: 3px solid #1eb9aa;
+    background-color: #2d2e32;
+color: white;
+}
+#vantagens{
+  border-top: 3px solid #1eb9aa;
+}
+#sistema {
+  border-top: 3px solid #1eb9aa;
+      background-color: #2d2e32;
+color: white;
+}
+#contao{
+  border-top: 3px solid #1eb9aa;
+}
+#footer{
+   border-top: 3px solid #1eb9aa;
+}
+
+
+*:before, *:after { content: ''; }
+hr {
+  border: 0;
+  margin: 1.35em auto;
+  max-width: 60%;
+  background-position: 50%;
+  box-sizing: border-box;
+}
+
+.accessory {
+  height: 6px;
+  background-image: radial-gradient(
+    closest-side,
+    hsla(0, 0%, 50%, 1.0),
+    hsla(0, 0%, 50%, 0) 100%);
+  position: relative;
+}
+
+.accessory:after {
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  display:block;
+  background-color: hsl(0, 0%, 75%);
+  height: 12px;
+  width:  12px;
+  transform: rotate(45deg);
+  margin-top:  -10px;
+  margin-left: -10px;
+  border-radius: 4px 0;
+  border: 4px solid hsla(0, 0%, 100%, 0.35);
+  background-clip: padding-box;
+  box-shadow: -10px 10px 0 hsla(0, 0%, 100%, 0.15), 10px -10px 0 hsla(0, 0%, 100%, 0.15);
+}
+
+
+html {
+  color: rgb(238, 238, 238);
+  background: #f0ebdc;
 }

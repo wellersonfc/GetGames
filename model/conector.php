@@ -2,8 +2,8 @@
 	//php confing - aqui estou configurando as intancias do banco setando em variais.
 	$host = 'localhost';
 	$bd ='bd_getgames';
-	$user ='root';
-	$senhabd ='sa123456';
+	$user ='sa1';
+	$senhabd = 'sa123456';
 
 	//Usando a fuction mysqli_connect para passar as permisoes e banco que deseijo usar.
 	$conexao = mysqli_connect($host,$user,$senhabd,$bd);
